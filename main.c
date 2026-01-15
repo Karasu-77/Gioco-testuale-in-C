@@ -31,6 +31,7 @@ printf(" ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  �
     printf("2) Gioca\n");
     printf("3) Termina Gioco\n");
     printf("4) Visualizza crediti\n\n");
+  
     do{
         if(scanf("%d", &scelta)!=1){
             puts("Input non valido.\n");
