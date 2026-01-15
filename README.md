@@ -2,11 +2,11 @@
 # Progetto-finale-2025-Cosestrane
 Progetto finale Programmazione Procedurale UniPG Informatica
 
-## Nome: 
+## Nome: Alsen
 
-## Cognome: 
+## Cognome: Xhani
 
-## Matricola:
+## Matricola: 353108
 
 ## Commenti/modifiche al progetto:
 
