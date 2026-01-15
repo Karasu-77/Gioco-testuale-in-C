@@ -31,8 +31,13 @@ printf(" ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  �
     printf("2) Gioca\n");
     printf("3) Termina Gioco\n");
     printf("4) Visualizza crediti\n\n");
-    scanf("%d", &scelta);
-    while ((c = getchar()) != EOF && c != '\n'); // Pulizia buffer
+    do{
+        if(scanf("%d", &scelta)!=1){
+            puts("Input non valido.\n");
+            while ((c = getchar()) != '\n' && c != EOF);
+            continue;}
+            break;
+    }while(1);
 
     switch(scelta){
 
