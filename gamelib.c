@@ -170,7 +170,7 @@ static void crea_giocatori(Giocatore *giocatore){
         giocatore->nome[strcspn(giocatore->nome, "\n")] = '\0';
         if (strlen(giocatore->nome)==0) {
         system("clear");
-        puts("Errore, il nome non può essere vuoto.\n");}
+        puts("(Il nome non può essere vuoto.)\n");}
 
         }while(strlen(giocatore->nome)==0);
     
@@ -1004,7 +1004,10 @@ static void combatti(Giocatore **lista_giocatori, int i){
     if(dado<lista_giocatori[i]->fortuna){puts("Mancato!\n");}
     else{lista_giocatori[i]->difesa_pischica-=nemico.attacco_pischico;
          puts("Sei stato colpito...!\n");
-        if(lista_giocatori[i]->difesa_pischica<=0){break;}}
+        if(lista_giocatori[i]->difesa_pischica<=0){
+            sleep(3);
+            printf("Oh no! %s è morto in battaglia!", lista_giocatori[i]->nome);
+            break;}}
 
     
     }while(nemico.difesa_pischica>0 && lista_giocatori[i]->difesa_pischica>0);
@@ -1040,7 +1043,10 @@ static void combatti(Giocatore **lista_giocatori, int i){
     if(dado<lista_giocatori[i]->fortuna){puts("Mancato!\n");}
     else{lista_giocatori[i]->difesa_pischica-=nemico.attacco_pischico;
         puts("Sei stato colpito...!\n");
-        if(lista_giocatori[i]->difesa_pischica<=0){break;}}
+        if(lista_giocatori[i]->difesa_pischica<=0){
+            sleep(3);
+            printf("Oh no! %s è morto in battaglia!", lista_giocatori[i]->nome);
+            break;}}
         
     }while(nemico.difesa_pischica>0 && lista_giocatori[i]->difesa_pischica>0);
     
@@ -1054,7 +1060,8 @@ static void combatti(Giocatore **lista_giocatori, int i){
     demotorzone_bool=false;
     if(vincitori<3){nomi_vincitori[vincitori] = strdup(lista_giocatori[i]->nome);
     vincitori++;}
-    printf("Demotorzone sconfitto! %s vince!\n", lista_giocatori[i]->nome);}
+    printf("Demotorzone sconfitto! %s vince!\n", lista_giocatori[i]->nome);
+    return;}
 
     
     if(nemico.difesa_pischica<=0){ //rimuovo il nemico dalla zona
@@ -1073,7 +1080,7 @@ static void raccogli_oggetto(Giocatore **lista_giocatori, int i){
 
     if(lista_giocatori[i]->pos_mondoreale->nemico==nessun_nemico){
 
-    int inventario = -1;
+    int inventario=-1;
 
     for (int j=0; j<3; j++) { //per controllare se nello zaino ho posti liberi
         if (lista_giocatori[i]->zaino[j]==nessun_oggetto) {
@@ -1221,8 +1228,6 @@ void gioca(void) {
             fuga=false; //si può evitare di combattere nel soprasotto una volta per turno
             do{
             if(lista_giocatori[i]->difesa_pischica<=0){ //se il giocatore muore viene liberato dalla memoria dinamica
-            sleep(3);
-            printf("Oh no! %s è morto in battaglia!", lista_giocatori[i]->nome);
             free(lista_giocatori[i]);
             lista_giocatori[i]=NULL;
             giocatori_vivi--;
@@ -1248,7 +1253,6 @@ void gioca(void) {
                     break;
             }while(1);
             
-            while ((c = getchar()) != EOF && c != '\n');
             system("clear");
 
             if(opzione==10){return;}
