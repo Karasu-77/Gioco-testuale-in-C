@@ -1012,7 +1012,8 @@ static void combatti(Giocatore **lista_giocatori, int i){
     
     }while(nemico.difesa_pischica>0 && lista_giocatori[i]->difesa_pischica>0);
 
-    }else{puts("\nNon c'è nessuno da combattere qui.\n");}
+    }else{puts("\nNon c'è nessuno da combattere qui.\n");
+         return;}
 
 }else{
 
@@ -1051,7 +1052,8 @@ static void combatti(Giocatore **lista_giocatori, int i){
     }while(nemico.difesa_pischica>0 && lista_giocatori[i]->difesa_pischica>0);
     
         
-    }else{puts("\nNon c'è nessuno da combattere qui.\n");}
+    }else{puts("\nNon c'è nessuno da combattere qui.\n");
+         return;}
 
 }
 
