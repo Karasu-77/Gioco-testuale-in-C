@@ -1006,7 +1006,7 @@ static void combatti(Giocatore **lista_giocatori, int i){
          puts("Sei stato colpito...!\n");
         if(lista_giocatori[i]->difesa_pischica<=0){
             sleep(3);
-            printf("Oh no! %s è morto in battaglia!", lista_giocatori[i]->nome);
+            printf("Oh no! %s è morto in battaglia!\n", lista_giocatori[i]->nome);
             break;}}
 
     
@@ -1045,7 +1045,7 @@ static void combatti(Giocatore **lista_giocatori, int i){
         puts("Sei stato colpito...!\n");
         if(lista_giocatori[i]->difesa_pischica<=0){
             sleep(3);
-            printf("Oh no! %s è morto in battaglia!", lista_giocatori[i]->nome);
+            printf("Oh no! %s è morto in battaglia!\n", lista_giocatori[i]->nome);
             break;}}
         
     }while(nemico.difesa_pischica>0 && lista_giocatori[i]->difesa_pischica>0);
