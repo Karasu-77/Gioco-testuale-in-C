@@ -1,3 +1,2 @@
-"Cosestrane"
-Progetto d'esame, un gioco testuale in C.
+"Cosestrane", un gioco testuale in C (progetto d'esame).
 
